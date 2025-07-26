@@ -2,13 +2,17 @@
 
 A high-performance screen capture module using Windows GDI, wrapped for Python using `pybind11`. Supports fast pixel data extraction and optional window rectangle info.
 
+---
+
 ## ✅ Features
 
 - Ultra-fast capture using `BitBlt` and `CreateDIBSection`
 - Python integration via `pybind11`
 - Capture specific window by title
-- Return pixel buffer as NumPy array
-- Query window position and size
+- Return pixel buffer as a NumPy array
+- Get window position and size (x, y, width, height)
+
+---
 
 ## ⚙️ Installation
 
@@ -16,28 +20,9 @@ A high-performance screen capture module using Windows GDI, wrapped for Python u
 
 - Python 3.8+
 - `pybind11`
-- Visual Studio Build Tools (C++)
+- Visual Studio Build Tools (with C++ support)
 
-### Build
+### Build the module
 
 ```bash
 python setup.py build_ext --inplace
-
-### Usage
-
-```bash
-import gdi
-
-# Initialize with window title
-win = gdi.GDI("Calculator")
-
-# Capture the image
-img = win.capture()
-
-# Get window position and size
-x, y, w, h = win.rect()
-
-# Use with OpenCV or NumPy
-import cv2
-cv2.imshow("Captured", img)
-cv2.waitKey(0)
