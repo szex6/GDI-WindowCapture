@@ -26,3 +26,19 @@ A high-performance screen capture module using Windows GDI, wrapped for Python u
 
 ```bash
 python setup.py build_ext --inplace
+```
+
+## 🚀 Usage
+
+```python
+import gdi
+import cv2
+
+window = gdi.GDI("File Explorer")
+
+img = window.capture()
+
+x, y, w, h = window.rect()
+
+cv2.imshow("Result", img)
+```
