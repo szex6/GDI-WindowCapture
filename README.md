@@ -22,3 +22,22 @@ A high-performance screen capture module using Windows GDI, wrapped for Python u
 
 ```bash
 python setup.py build_ext --inplace
+
+### Usage
+
+```bash
+import gdi
+
+# Initialize with window title
+win = gdi.GDI("Calculator")
+
+# Capture the image
+img = win.capture()
+
+# Get window position and size
+x, y, w, h = win.rect()
+
+# Use with OpenCV or NumPy
+import cv2
+cv2.imshow("Captured", img)
+cv2.waitKey(0)
