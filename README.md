@@ -22,7 +22,7 @@ A high-performance screen capture module using Windows GDI, wrapped for Python u
 - `pybind11`
 - Visual Studio Build Tools (with C++ support)
 
-### Build the module
+### Build
 
 ```bash
 python setup.py build_ext --inplace
